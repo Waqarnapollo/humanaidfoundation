@@ -1,14 +1,14 @@
 {
   "expo": {
     "name": "HumanAidFoundation",
-    "slug": "HumanAidFoundation",
+    "slug": "human-aid-foundation",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -28,6 +28,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a6d7cf2f-ffb9-44fa-a39d-5d7f80d88c14"
+      }
+    },
+    "owner": "waqarmughal005"
   }
 }
