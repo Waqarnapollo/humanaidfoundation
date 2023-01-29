@@ -29,7 +29,7 @@ const Appeals = () => {
       });
   }, []);
 
-  const Item = ({ item, plainContent, onPress }) => {
+  const Item = ({ key, item, plainContent, onPress }) => {
     return (
       <TouchableOpacity style={Styles.AppealsBg} onPress={onPress}>
         <View style={Styles.Cause}>

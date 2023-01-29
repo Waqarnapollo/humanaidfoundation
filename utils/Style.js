@@ -71,11 +71,19 @@ export const Styles = StyleSheet.create({
   },
   AppealContainer: {
     flex: 1,
-    padding: 10,
+    margin: 10,
   },
   AppealImg: {
     width: "100%",
     height: 250,
     borderRadius: 10,
+  },
+  AppealTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    paddingVertical: 10,
+  },
+  ProgressBar: {
+    marginBottom: 10,
   },
 });
