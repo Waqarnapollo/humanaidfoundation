@@ -12,8 +12,9 @@ export const Styles = StyleSheet.create({
   },
   Logo: {
     width: Dimensions.get("window").width * 0.8,
-    height: 100,
+    height: 150,
     resizeMode: "contain",
+    marginBottom: 20,
   },
   HomeText: {
     width: Dimensions.get("window").width * 0.8,
@@ -37,9 +38,44 @@ export const Styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 14,
   },
-  AppealBg: {
+  AppealsBg: {
     width: "100%",
     backgroundColor: "#fff",
-    paddingVertical: 20,
+    marginVertical: 10,
+    width: Dimensions.get("window").width * 1,
+  },
+  Cause: {
+    display: "flex",
+    flexDirection: "row",
+    width: Dimensions.get("window").width * 1,
+    padding: 10,
+  },
+  AppealsImg: {
+    width: 100,
+    height: 100,
+    marginRight: 10,
+    borderRadius: 10,
+  },
+  Content: {
+    flex: 1,
+    flexDirection: "column",
+  },
+  AppealsTitle: {
+    flexWrap: "wrap",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  AppealsDescription: {
+    flexWrap: "wrap",
+    fontSize: 14,
+  },
+  AppealContainer: {
+    flex: 1,
+    padding: 10,
+  },
+  AppealImg: {
+    width: "100%",
+    height: 250,
+    borderRadius: 10,
   },
 });
