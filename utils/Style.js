@@ -7,6 +7,15 @@ export const Styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  preloader: {
+    flex: 1,
+    justifyContent: "center",
+    backgroundColor: "#3D476A",
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    zIndex: 99,
+  },
   Container: {
     flex: 1,
   },
@@ -83,7 +92,64 @@ export const Styles = StyleSheet.create({
     fontWeight: "bold",
     paddingVertical: 10,
   },
+  Goal: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 5,
+  },
+  GoalRaised: {
+    fontWeight: "bold",
+    textAlign: "left",
+  },
+  DonationGoal: {
+    fontWeight: "bold",
+    textAlign: "right",
+  },
   ProgressBar: {
     marginBottom: 10,
+  },
+  AppealDonateBtn: {
+    backgroundColor: "#252e4d",
+    marginTop: 20,
+    paddingVertical: 10,
+    borderWidth: 2,
+    borderColor: "#dbdbdb",
+    borderRadius: 50,
+  },
+  DonateBtnText: {
+    color: "#fff",
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 14,
+  },
+  AppealFormTitle: {
+    flexWrap: "wrap",
+    fontSize: 24,
+    fontWeight: "bold",
+    paddingBottom: 20,
+  },
+  AppealFormSelector: {
+    backgroundColor: "#fff",
+    marginBottom: 20,
+    borderRadius: 10,
+  },
+  AppealFormInner: {
+    padding: 10,
+  },
+  AppealFormInput: {
+    backgroundColor: "#fff",
+    height: 50,
+    padding: 10,
+    borderRadius: 10,
+  },
+  PreTextCenter: {
+    marginBottom: 10,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  PreText: {
+    marginBottom: 10,
+    fontWeight: "bold",
   },
 });

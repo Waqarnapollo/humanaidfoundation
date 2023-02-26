@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
+  ActivityIndicator,
   FlatList,
   Image,
-  SafeAreaView,
   Text,
   TouchableOpacity,
   View,
@@ -14,6 +14,7 @@ import axios from "axios";
 const Appeals = () => {
   const navigation = useNavigation();
   const [form, setForm] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -26,12 +27,13 @@ const Appeals = () => {
       .then((success) => {
         const formdata = success.data.forms;
         setForm(formdata);
+        setLoading(false);
       });
   }, []);
 
-  const Item = ({ key, item, plainContent, onPress }) => {
+  const Item = ({ index, item, plainContent, onPress }) => {
     return (
-      <TouchableOpacity style={Styles.AppealsBg} onPress={onPress}>
+      <TouchableOpacity key={index} style={Styles.AppealsBg} onPress={onPress}>
         <View style={Styles.Cause}>
           <Image
             source={{ uri: item.info.thumbnail }}
@@ -54,7 +56,7 @@ const Appeals = () => {
     );
   };
 
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item, index }) => {
     const plainContent = item.info.content.replace(/<[^>]+>/g, "");
 
     const Appeal = (item) => {
@@ -65,7 +67,7 @@ const Appeals = () => {
 
     return (
       <Item
-        key={item.info.id}
+        key={index}
         item={item}
         onPress={() => Appeal(item)}
         plainContent={plainContent}
@@ -74,13 +76,24 @@ const Appeals = () => {
   };
 
   return (
-    <View style={Styles.Container}>
-      <FlatList
-        data={form}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-      />
-    </View>
+    <>
+      {loading ? (
+        <ActivityIndicator
+          color="#fff"
+          style={Styles.preloader}
+          visible={loading}
+        />
+      ) : (
+        ""
+      )}
+      <View style={Styles.Container}>
+        <FlatList
+          data={form}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
+      </View>
+    </>
   );
 };
 
